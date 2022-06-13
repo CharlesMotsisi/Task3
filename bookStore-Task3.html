@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books4Kids</title>
+    <link ref="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .attribution { font-size: 11px; text-align: center; }
+        .attribution a { color: hsl(249, 45%, 44%); } 
+
+    :root{
+    --dark-blue:darkblue;
+    --light-gray: lightgrey;
+    --light-blue: lightblue;
+    --orange: orange;
+    --white:#fff;
+    --black:black;
+    --brown: burlywood;
+
+    }
+    .html{
+        font-size: 62.3%;
+        overflow-x: hidden;
+        scroll-padding-top: 5rem;
+        scroll-behavior: smooth;
+    }
+    html::-webkit-scrollbar{
+        width:1rem;
+    }
+    html::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background: var(--brown);
+    }
+
+    .container{
+        background: white;
+        padding: 1.5rem 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    .formatNav{
+        margin:auto;
+        background-color: var(--brown);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        left:50px;
+    }
+    .img-format{
+        font-size:2.5rem;
+    }
+    .form-search{
+        width: 35rem;
+        height: 3rem;
+        overflow: hidden;
+        background: var(--brown);
+        display: flex;
+        align-items: center;
+        border-radius: .5rem;
+        margin-left: 3.2rem;
+    }
+    .form-search input{
+      font-size: 1.2rem;
+      padding:0 1.2rem; 
+      height: 100%; 
+      width: 70%;
+      text-transform: none;
+      color: var(--black);
+    }
+    .form-search label{
+        font-size: 1.8rem;
+        padding-right: 1.1rem;
+        color: var(--black);
+        cursor:pointer;
+    }
+    .form-search label:hover{
+        color: var(--orange);
+    }
+    .icons a{
+        font-size: 1.5rem;
+        margin-left: 0.2rem;
+        color: var(--dark-blue);
+        cursor: pointer;
+        text-decoration: none;
+        
+    }
+    .icons a:hover{
+        color: var(--orange);
+    }
+    .icons #login{
+        color:var(--dark-blue);
+        font-size: 1.5rem;
+        margin-left: 0.2rem;
+        cursor: pointer;
+    }
+    .icons #login:hover{
+        color:var(--orange);
+    }
+    .headCont{
+        position:relative;
+        background-color:lightyellow;
+        left: 25%;
+        padding-right: 30%;
+        top: -110px;
+        
+    }
+    .nev{
+        text-align: center;
+        padding: 1.1rem;
+    }
+    .nev a,
+    .nev #bk{
+        color: var(--brown);
+        display:inline-block;
+        padding: 0.8rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+    }
+    .nev a:hover,
+    .nev #bk:hover{
+        color: var(--orange);
+    }
+    .headCont .active{
+        position:fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+    section{
+        padding: 5rem 9%;
+    }
+    .new-books{
+        background-size: cover;
+        background-position: center;
+        background: white no-repeat;
+    }
+    .bks-slide{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        background: lightyellow;
+    }
+    .wrapper{
+        flex: 1 1 42rem;
+        text-align: center;
+        margin-top: 2rem;
+        gap: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 10%;
+    }
+    section h2{
+        font-size:3.0rem;
+        text-align: center;
+        padding-bottom:0.2rem;
+        font-style: italic;
+        border-bottom: 1px solid black;
+    }
+    .wrapper a img{
+        height:12rem;
+
+    }
+    .wrapper a:hover img{
+        transform: scale(.9);
+    }
+    .featured-bks{
+        background-size: cover;
+        background-position: center;
+        background: white no-repeat; 
+        
+    }
+    .slide{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        background: lightyellow;
+    }
+    .wrapp{
+        flex: 1 1 42rem;
+        text-align: center;
+        margin-top: 2rem;
+        gap: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 10%;
+    }
+    .wrapp a img{
+        height:12rem;
+
+    }
+    .wrapp a:hover img{
+        transform: scale(.9);
+    }
+    .btn-shop{
+        background-color: var(--brown);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-left: 45%;
+    }
+    .btn{
+        background-color: var(--orange);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-left: 0;  
+    }
+    .recom-bks{
+        background-size: cover;
+        background-position: center;
+        background: white no-repeat;   
+    }
+    .recomm-slide{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        background: lightyellow;
+    }
+    .recomm-wrapp{
+        flex: 1 1 42rem;
+        text-align: center;
+        margin-top: 2rem;
+        gap: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 20%;
+    }
+    .recomm-wrapp a img{
+        height:12rem;
+    }
+    .recomm-wrapp a:hover img{
+        transform: scale(.9);
+    }
+    .reviews{
+        margin:auto;
+        padding: 0 1rem;
+        max-width: 1100px;
+        text-align: center;
+    }
+    .rev-section{
+        margin: 2rem auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .rev{
+      margin: 0 1rem;
+      min-width: 300px;
+    }
+    .head-rev img{
+        margin: 1.75rem auto;
+        width: 180px;
+        height:150px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 10px 25px rgba(0,0,0,.25);
+
+    }
+    .body-rev{
+        background-color: lightyellow;
+        padding: 2.5rem;
+        box-shadow: 2px 2px 10px rgb(255,255,255);
+    }
+    .name{
+        font-size: 1.5rem;
+        color:black;
+        margin-bottom: .25rem;
+    }
+    .rating{
+        color: var(--orange);
+        margin: 1rem 0;
+
+    }
+    .comment{
+        font-style: italic;
+    }
+    .footer .theBox-cont{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem,1fr));
+        gap: 0.5rem;
+        background-color: lightyellow;
+        border-top: 1px solid black;
+    }
+    .footer .theBox-cont .box h3{
+        font-size: 1.5rem;
+        color:black;
+        padding:1.2rem 0;
+    }
+    .footer .theBox-cont .box a{
+        display:block;
+        font-size: 1.0rem;
+        color: var(--light-color);
+        padding: 1rem 0;
+    }
+    .footer .theBox-cont .box a i{
+        color: var(--orange);
+        padding-right: .5rem;
+    }
+    .footer .theBox-cont .box a:hover i{
+        padding-right: 2rem;
+    }
+    .footer .share{
+        padding: 1rem 0;
+        text-align: center;
+    }
+    .footer .socials a{
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        font-size: 2rem;
+        color:#fff;
+        background: var(--orange);
+        margin: 0 .3rem;
+        border-radius: 50%;
+    }
+    .footer .socials a:hover{
+        background: var(--black);
+    }
+    .credit{
+        border-top: var(--border);
+        margin-top: 2rem;
+        padding: 0 1rem;
+        padding-top: 2.5rem;
+        font-size: 1rem;
+        color:var(--light-color);
+        text-align: center;
+        border-top: 1px solid black;
+    }
+    .credit span{
+        color: var(--orange);
+    }
+    /*Styling Login page*/
+    .login-form-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 9);
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/background.jpg);
+        position: fixed;
+        top:0;
+        right:-105%;
+        z-index:10000;
+        height: 100%;
+        width: 100%;                                                                             
+    }
+    .login-form-container .active{
+        right: 0;
+    }
+    .login-form-container form{
+        background:#fff;
+        border:var(--border);
+        width:40rem;
+        padding:2rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        margin: 2rem;
+
+    }
+    .login-form-container form h3{
+       font-size: 2.5rem;
+       text-transform: uppercase;
+       color: black;
+       text-align: center; 
+    }
+    .login-form-container form span{
+       display:block;
+       font-size: 1.7rem;
+       padding-top: 1rem;
+    }
+    .login-form-container form .bx{
+        margin: .5rem 0;
+        font-size: 1rem;
+        border: var(--border);
+        border-radius: .3rem;
+        padding: 1rem 0.5rem;
+        color: black;
+        text-transform: none;
+        width: 100%;
+        background-color: bisque;
+
+    }
+    .login-form-container form .checkbox{
+        display: flex;
+        align-items: center;
+        gap:.2rem;
+        padding: 1rem 0;
+    }
+    .login-form-container form .checkbox label{
+        font-size: 1rem;
+        color: black;
+        cursor:pointer;
+    }
+    .login-form-container form p{
+        padding: .8rem;
+        color: black;
+        font-size: 1rem;
+    }
+    .login-form-container form p a{
+        color: var(--orange);
+        text-decoration: underline;
+    }
+    .login-form-container #close-login-btn{
+        position: absolute;
+        top: 1.5rem;
+        right: 2.5rem;
+        font-size: 4rem;
+        color: lightyellow;
+        cursor:pointer;
+
+    }
+    /*Styling login ends here*/
+    .logoutBtn{
+        padding: 5px 10px;
+        cursor:pointer;
+        background-color: var(--orange);
+        border-radius: 10px;
+        margin-left: 15px;
+        border:#fff;
+        display: inline-block;
+    }
+    
+    .boxProfile{
+        /*position: fixed;*/
+        width: 250px;
+        left: 0;
+        height: 20%;
+        background: lightyellow;
+        text-decoration: none;
+        
+    }
+    .boxProfile header{
+        font-size: 22px;
+        color: #fff;
+        text-align: center;
+        line-height: 70px;
+        background: var(--orange);
+        user-select: none;
+    }
+    
+    .boxProfile img{
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        padding: 40px;
+        border:.7rem solid lightyellow;
+        
+    }
+    .boxProfile ul a{
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 40px;
+        font-size: 17px;
+        color: var(--orange);
+        padding-left: 5px;
+        box-sizing: border-box;
+        /*border-top: 1px solid var(--orange);
+        border-bottom: 1px solid var(--orange);*/
+        transform: .4s;
+        text-decoration: none;
+        padding: 5px;
+    }
+    ul li:hover a{
+        padding-left: 20px;
+    }
+    .boxProfile ul li{
+        list-style-type: none;
+    }
+    .boxProfile ul a i{
+        margin-right: 8px;   
+    }
+    .boxProfile h3{
+        color: var(--orange);
+        padding-bottom: 0;
+        text-align: center;
+        font-size: 30px;
+    }
+    .boxProfile h4{
+        color: var(--orange);
+        padding-top: 0;
+        text-align: center;
+        font-size: 20px; 
+    }
+    
+   @media (max-width:991px){
+        html{
+            font-size: 55%;
+        }
+        .formatNav{
+            padding:2rem;
+        }
+        section{
+            padding: 3rem 2rem;
+        }
+   }
+
+   @media (max-width:450px){
+        html{
+            font-size: 55%;
+        }
+        .formatNav{
+            padding:2rem;
+        }
+   }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="boxProfile">
+                <header>Profile</header>
+                <img src="images\pic.jpg">
+                <h3>Welcome back</h3>
+                <h4>Charles</h4>
+                <ul>
+                    <li><a href="#"><i class="fa fa-archive"></i>Collections</a></li>
+                    <li><a href="#"><i class="fa fa-bookmark"></i>Saved</a></li>
+                    <li><a href="#"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>Contacts</a></li>
+                </ul>
+        
+            </div>
+           <div class="formatNav">
+               <div class="img-format">
+                   <img src="images/logo.jfif" alt="Logo">
+               </div>
+              
+                <form action="" class="form-search">
+                    <input type="search" name="" placeholder="search here..." id="search-box">
+                    <label for="search-box" class="fa fa-search"></label>
+                </form>
+
+                <div class="icons">
+                    <a href="#" class="fa fas-home"></a>
+                    <a href="#" class="fa fa-shopping-cart"></a>
+                    <a href="#" class="fa fa-heart"></a>
+                    <div id="login" class="fa fa-user"></div>
+                    <input type="button" value="Logout" class="logoutBtn" onclick="logout();">
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+    <header>
+        <div class="headCont">
+            <form class="nev">
+                <a href="#Recommended">Recommended</a>
+                <a href="#Reviews">Reviews</a>
+                <a href="#Contact">Contact</a>
+                <a href="#New Release">New Release</a>
+                <a href="#Featured">Featured</a> 
+                <div id="bk" class="fa fa-book"></div>
+                
+            </form>
+        </div>
+    </header>
+
+    <div class="login-form-container">
+        <div id="close-login-btn" class="fa fa-times"></div>
+       <form action="">
+           <h3>sign in</h3>
+           <span>Username</span>
+           <input type="email" name="" class="bx" placeholder="enter your email" id="">
+           <span>Password</span>
+           <input type="password" name="" placeholder="enter your password" id="">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <input type="submit" value="sign in" class="btn">
+            <p>Forget password? <a href="#">click here</a></p>
+            <p>Don't have an account? <a href="#">create one</a></p>
+        </form> 
+    </div>
+
+    <section class="new-books" id="New Release">
+        <h2>New Release</h2>
+        <div class="bks-slide">  
+                <div class="wrapper">
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/ben10.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R220.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/avengers.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R200.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/superstrikers.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R180.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/charlie.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R210.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/silk.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R185.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+
+                    <div class="theBox">
+                        <div class="icons">
+                            <a href="#" class="fa fa-search"></a>
+                            <a href="#" class="fa fa-heart"></a>
+                            <a href="#" class="fa fa-eye"></a> 
+                        </div>
+
+                        <div class="pic">
+                            <a href="#"><img src="images/belle.jpg" alt="picture"></a>  
+                        </div>
+
+                        <div class="content">
+                            <div class="price">R180.00</div>
+                            <a href="#" class="btn">Add to cart</a>
+                        </div>
+                    </div>
+              </div>
+        </div>
+        <button class="btn-shop">Shop Now</button>
+    </section>
+    <section class="featured-bks" id="Featured">
+        <h2>Featured</h2>
+        <div class="slide">
+            <div class="wrapp">
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/batman.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R120.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/bfg.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R115.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/bizzaro.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R115.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/cat.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/charlotte.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R125.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/corduroy.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R100.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/DC.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R85.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/green.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R108.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/matilda.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R122.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/tree.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R85.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/venom.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R150.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>  
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/wimpy.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-shop">Shop Now</button>
+    </section>
+    <section class="recom-bks" id="Recommended">
+        <h2>Recommended</h2>
+        <div class="recomm-slide">
+            <div class="recomm-wrapp">
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>   
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/thor.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>   
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/theFox.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>   
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/pete.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+
+                <div class="theBox">
+                    <div class="icons">
+                        <a href="#" class="fa fa-search"></a>
+                        <a href="#" class="fa fa-heart"></a>
+                        <a href="#" class="fa fa-eye"></a>   
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="images/moon.jpg" alt="picture"></a>
+                    </div>
+                    <div class="content">
+                        <div class="price">R118.00</div>
+                        <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-shop">Shop Now</button>
+    </section>
+    <section class="reviews" id="Reviews">
+        <h2>Reviews</h2>
+        <div class="rev-section">
+            <div class="rev">
+                <div class="head-rev">
+                    <img src="images/face1.jfif" alt="" width="200px">
+                </div>
+                <div class="body-rev">
+                    <div class="name">Michelle Davis</div>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="comment">A good website for kid's books<br>
+                    highly recommend it...</div>
+                </div>
+
+            </div>
+
+            <div class="rev">
+                <div class="head-rev">
+                    <img src="images/face2.jfif" alt="" width="200px">
+                </div>
+                <div class="body-rev">
+                    <div class="name">David Skabinde</div>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half"></i>
+                    </div>
+                    <div class="comment">My daughter loves good night stories<br>
+                    ,and a day without seeing her,<br>
+                    these books are good for<br>
+                    our night bonding sessions</div>
+                </div>
+
+            </div>
+
+            <div class="rev">
+                <div class="head-rev">
+                    <img src="images/face3.jfif" alt="" width="200px">
+                </div>
+                <div class="body-rev">
+                    <div class="name">Ahmed Maharaj</div>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="comment">There are not many options to buy from,<br>
+                    the site must have more books</div>
+                </div>
+
+            </div>
+
+            <div class="rev">
+                <div class="head-rev">
+                    <img src="images/face6.jfif" alt="" width="200px">
+                </div>
+                <div class="body-rev">
+                    <div class="name">Naledi Stephine</div>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="comment">My daughter loves this site's books<br>
+                    plus it is easy to navigate<br> the site...thumbs up!!!</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="Contact">
+        <div class="theBox-cont">
+            <div class="box">
+                <h3>Our Location</h3>
+                <a href="#"><i class="fa fa-map-marker-alt"></i>South Africa</a>
+                <a href="#"><i class="fa fa-map-marker-alt"></i>Botswana</a>
+                <a href="#"><i class="fa fa-map-marker-alt"></i>Lesotho</a>
+                <a href="#"><i class="fa fa-map-marker-alt"></i>eSwatini</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"><i class="fa fa-arrow-right"></i>Featured</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>New Release</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>Recommended</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>Reviews</a>
+            </div>
+
+            <div class="box">
+                <h3>Extra Links</h3>
+                <a href="#"><i class="fa fa-arrow-right"></i>Account Info</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>About Us</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>Privacy Policy</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>Payment Method</a>
+                <a href="#"><i class="fa fa-arrow-right"></i>Our Services</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#"><i class="fa fa-phone"></i>+27 12 365 8874</a>
+                <a href="#"><i class="fa fa-envelope"></i>books4kids@gmail.org.za</a>
+                <a href="#"><i class="fa fa-website"></i>books4kids.org.za</a>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+
+        </div>
+        <div class="credit">created by <span>Charlie Charles</span> | all rights reserved!</div>
+    </section>
+    <script>
+        function logout(){
+            location.href = "login.html";
+        }
+        
+    </script>
+    <script>
+       let loginFrm = document.querySelector('.login-form-container');
+        document.querySelector('#btn').onclick = () =>{
+            loginFrm.classList.toggle('Active');
+        }
+
+        window.onscroll =() =>{
+            if(window.scrollY > 80){
+                document.querySelector('.headCont .nev').classList.add('active');
+            }else
+            {
+                document.querySelector('.headCont .nev').classList.remove('active');
+            }
+        }
+        window.onload =() =>{
+            if(window.scrollY > 80){
+                document.querySelector('.headCont').classList.add('active');
+            }else
+            {
+                document.querySelector('.headCont').classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

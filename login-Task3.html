@@ -1,0 +1,279 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            .format{
+              height: 100%;
+              width: 100%;
+              background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/background.jpg);
+              background-position: center;
+              background-size: cover;
+              position:absolute;
+            }
+            .box{
+                width: 400px;
+                height: 520px;
+                position: relative;
+                margin: 6% auto;
+                background: white;
+                padding: 5px;
+                overflow: hidden;
+            }
+            .btn-box{
+                width: 220px;
+                margin: 35px auto;
+                position: relative;
+                box-shadow: 0 0 20px 9px grey;
+                border-radius: 30px;
+            }
+            .toggle-btn{
+                padding:10px 30px;
+                cursor:pointer;
+                background: transparent;
+                border: 0;
+                outline: none;
+                position: relative;
+            }
+            #theBtn{
+                top:0;
+                left:0;
+                position: absolute;
+                width: 110px;
+                height: 35px;
+                background: linear-gradient(to right,blue,lightblue);
+                border-radius:30px;
+                transition: .5s;
+            }
+            .input-Det{
+                top:180px;
+                position: absolute;
+                width:280px;
+                transition: .5s;
+            }
+            .enter-field{
+                width: 120px;
+                padding: 10px 0;
+                margin: 5px 0;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid darkgrey;
+                outline:none;
+                background: transparent;
+            }
+            .btn-submit{
+              width: 85%;
+              padding: 10px 30px;
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              background: linear-gradient(to right,blue,lightblue);
+              border: 0;
+              outline: none;
+              border-radius: 30px;
+            }
+            .btn-submit2{
+              width: 85%;
+              padding: 10px 30px;
+              cursor: pointer;
+              display:block;
+              margin: 4px 2px;
+              background: linear-gradient(to right,blue,lightblue);
+              
+              border: 0;
+              outline: none;
+              border-radius: 30px;  
+            }
+            .chkBox{
+                margin: 30px 10px 30px 0px;
+            }
+            span{
+                color:black;
+                font-size: 16px;
+                bottom: 63px;
+                position: absolute;
+            }
+            #login{
+                left: 50px;
+            }
+            #register{
+                left: 450px;
+            }
+            .icons{
+                width: 100px;
+                height: 70px;
+                position: absolute;
+                cursor: pointer;
+                color:lightblue;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="format">
+            <div class="box">
+                <div class="btn-box">
+                    <div id="theBtn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <form id="login" class="input-Det">
+                  <input type="text" id="userName" class="enter-field" placeholder="Username" required><br> 
+                  <input type="text" id="passWrd" class="enter-field" placeholder="Enter Password" required><br>
+                  <input type="checkbox" class="chkBox"><span>Remember Password</span>
+                  <input type="button" value="Login" class="btn-Submit" onclick="logIn();">
+                </form>
+                <form id="register" class="input-Det">
+                    <input type="text" id="regUserName" class="enter-field" placeholder="Username" required><br> 
+                    <input type="email" id ="regMail" class="enter-field" placeholder="Email" patter="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required><br> 
+                    <input type="text" id="regPassWrd" class="enter-field" placeholder="Enter Password" required><br>
+                    <input type="text" id="regPassWrd2" class="enter-field" placeholder="Confirm Password" required><br>
+                    <input type="file" name="inpFile" id="inpFile"><br>
+                    <input type="checkbox" class="chkBox"><span>Agree to the terms & conditions</span><br>
+                    <input type="button" value="Register" class="btn-Submit" onclick="registration();">
+                </form>
+
+            </div>
+            <div class="icons">
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-pinterest"></i>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("theBtn");
+
+            function register()
+            {
+              x.style.left = "-400px";
+              y.style.left = "50px"; 
+              z.style.left = "110px"; 
+            }
+            function login()
+            {
+              x.style.left = "50px";
+              y.style.left = "450px"; 
+              z.style.left = "0"; 
+            }
+            
+        </script>
+
+        <script>
+          var modal = document.getElementById('input-Det');  
+          window.onclick = function(event)
+          {
+              if(event.target==modal)
+              {
+                  modal.style.display = "none";
+              }
+          }
+        </script>
+        <script>
+            class regLogin{
+                constructor(username,password,email,passwrd2){
+                    this.username = username;
+                    this.password = password;
+                    this.mail = email;
+                    this.passwrd2 = passwrd2;
+                 }
+             }
+             
+             let arrValues = [];
+             let arrPictures = [];
+
+                function registration(){
+                    let theUserName = document.querySelector("#regUserName").value;
+                    let thePassWrd = document.getElementById("regPassWrd").value;
+                    let validatePass = document.getElementById("regPassWrd2").value;
+                    let theEmail = document.getElementById("regMail").value;
+                    let takePic = document.getElementById("inpFile").value;
+                    
+                    
+                   
+                        if(theUserName === "" || thePassWrd === "" || validatePass === "" || theEmail === ""){
+                            alert("Field cannot be empty, re-check and re-enter");
+                        }
+                        else{
+                            let isTrue = false;
+                            for(let i = 0; i < arrValues.length; i++ )
+                            {
+                                if(arrValues[i].username === theUserName){
+                                    isTrue = true;
+                                    break;
+                                }
+                            }
+
+                            if(isTrue){
+                                alert("Account already created!!!");
+                            }
+                            else{
+                                if(thePassWrd === validatePass){
+                                    let newUser = new regLogin(theUserName,thePassWrd,theEmail,validatePass);
+                                    arrValues.push(newUser);
+                                    arrPictures.push(takePic);
+                                    alert(theUserName + " registered successfully");
+                                    
+                                }
+                                else{
+                                    alert("Something went wrong or passwords didnt't match");
+                                }  
+                            }
+                        } 
+                        let input1 = document.querySelectorAll('#regUserName');
+                        let input2 = document.querySelectorAll('#regPassWrd');
+                        let input3 = document.querySelectorAll('#regPassWrd2');
+                        let input4 = document.querySelectorAll('#regMail');
+                        let pic = document.querySelectorAll('#inpFile')
+
+
+                        input1.forEach(input => input.value = '');
+                        input2.forEach(input => input.value = '');
+                        input3.forEach(input => input.value = '');
+                        input4.forEach(input => input.value = '');
+                        pic.forEach(input => input.value = '');
+                }
+
+                function logIn(){
+                    //registration();
+                    let takeUser = document.querySelector("#userName").value;
+                    let takePassWrd = document.getElementById("passWrd").value;
+                    let flag = false;
+                    let flag2 = true;
+                    if(takeUser === "" || takePassWrd === ""){
+                        alert("Fields cannot be empty");
+                    }
+                    else if(arrValues.length === 0){
+                        alert("Do not have an account");
+                    }
+                    else{
+                        for(let i = 0; i < arrValues.length;i++){
+                            if(arrValues[i].password === takePassWrd && arrValues[i].username === takeUser){
+                                //alert("Logged in!!!");
+                                location.href = "bookStore.html";
+                                flag = true;
+                            }
+                            else{
+                                alert("wrong password or username");
+                            } 
+                        }
+                    }
+                    let input5 = document.querySelectorAll('#userName');
+                    let input6 = document.querySelectorAll('#passWrd');
+
+                    input5.forEach(input => input.value = '');
+                    input6.forEach(input => input.value = '');
+                }
+        </script>
+        
+    </body>
+</html>
